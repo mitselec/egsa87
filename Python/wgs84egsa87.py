@@ -16,9 +16,6 @@
  Institute of Computer Science, Foundation for Research & Technology - Hellas
  Heraklion, Crete, Greece
 
- Dimitrios "mitselec" Dimopoulos 2021
- 
-
  Feb  2020  - Initial version. (v. 1.0)
  Feb  2021  - Minor update. (v. 1.1)
  July 2021  - Python Version (v. 1.2)

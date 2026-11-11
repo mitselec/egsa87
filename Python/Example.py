@@ -1,7 +1,5 @@
 '''
 Example of WGS84 to EGSA87 conversion and the opposite
-
-Dimitrios Dimopoulos 2021
 '''
 
 import math
