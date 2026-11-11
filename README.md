@@ -28,7 +28,7 @@ Implementations are provided in three languages: Python (installable package wit
 
 A note on the `src/` directory: it follows the modern Python *src layout* convention. `src/` itself contains no code — the package is `src/egsa87/`, and after `pip install .` you simply `import egsa87`. The indirection keeps the importable package from being picked up accidentally from the working directory, so tests always exercise the installed code. All other directories are named after the language they contain.
 
-This repository is the maintained continuation of the original [mlourakis/egsa87](https://github.com/mlourakis/egsa87) project; the Python port was contributed in [upstream PR #1](https://github.com/mlourakis/egsa87/pull/1).
+This repository is the maintained continuation of the original [mlourakis/egsa87](https://github.com/mlourakis/egsa87) project. The Python port was contributed by [Dimitrios Dimopoulos](https://github.com/mitselec) in [upstream PR #1](https://github.com/mlourakis/egsa87/pull/1), who also maintains this fork.
 
 Code is based on the [icoordstrans](https://github.com/skozan/icoordstrans) library.
 For an overview of spatial referencing, see [this.](https://unstats.un.org/Unsd/geoinfo/UNGEGN/docs/_data_ICAcourses/_HtmlModules/_Documents/D06/documents/D06-03_KnippersPPTeaching.pdf)
