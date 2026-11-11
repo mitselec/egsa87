@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "egsa87"
+version = "1.2.0"
+description = "Convert geodetic coordinates between WGS84 and the Greek HGRS87 (EGSA87/ΕΓΣΑ87) system"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+keywords = ["geodesy", "coordinates", "WGS84", "EGSA87", "HGRS87", "EPSG:2100", "Greece"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pyproj>=3.4",
+]
+
+[project.scripts]
+egsa87 = "egsa87.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mitselec/egsa87"
+Upstream = "https://github.com/mlourakis/egsa87"
+
+[tool.setuptools.packages.find]
+where = ["src"]

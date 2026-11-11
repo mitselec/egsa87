@@ -15,6 +15,12 @@
 
 #include "egsa87.h"
 
+// M_PI is not part of standard C; it is only exposed by some math.h
+// implementations under non-strict modes (e.g. GNU extensions).
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 // philam contains the latitude & longitude in radians
 // xy contains the EGSA87 coordinates upon return (in meters)
 // 
