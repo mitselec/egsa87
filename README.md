@@ -9,7 +9,7 @@ Implementations are provided in three languages:
 
 | Directory | Language | Notes |
 |-----------|----------|-------|
-| `src/egsa87/` | Python | Installable package with a command-line interface |
+| `src/egsa87/` | Python | Installable package with a command-line interface and a Tkinter GUI |
 | `C/` | C | C99 port of the Matlab routines, with a test program |
 | `Matlab/` | Matlab | Original implementation |
 
@@ -42,6 +42,16 @@ $ egsa87 to-wgs84 --x 475859.572 --y 4261163.141
 
 Use `--radians` to work in radians (matching the library API) and `--json` for machine-readable output. The module can also be run directly with `python -m egsa87`.
 
+### GUI
+
+A minimal desktop GUI built with Tkinter is included. After installing the package, run:
+
+```sh
+egsa87-gui
+```
+
+or equivalently `python -m egsa87.gui`. Pick the conversion direction, enter the two values (a decimal comma is accepted as well as a decimal point), press **Convert**, and copy the result if needed. On Linux, tkinter requires the `python3-tk` package (`sudo apt install python3-tk`); on Windows and macOS it ships with Python.
+
 ### Library usage
 
 Both functions expect/return angles in radians and planar coordinates in meters:
@@ -59,6 +69,14 @@ phi, lam = egsa87wgs84(x, y)                                 # EGSA87 -> WGS84
 ```sh
 make build          # builds build/egsa87_test
 make test-c         # runs the test program
+```
+
+or with CMake:
+
+```sh
+cmake -S . -B build-cmake
+cmake --build build-cmake
+./build-cmake/egsa87_test
 ```
 
 or directly:

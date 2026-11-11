@@ -28,6 +28,7 @@ dev = [
 
 [project.scripts]
 egsa87 = "egsa87.cli:main"
+egsa87-gui = "egsa87.gui:main"
 
 [project.urls]
 Homepage = "https://github.com/mitselec/egsa87"

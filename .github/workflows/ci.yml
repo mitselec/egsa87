@@ -29,7 +29,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build C test program
+      - name: Build C test program (make)
         run: make build
-      - name: Run C test program
+      - name: Run C test program (make)
         run: make test-c
+      - name: Build C library and test program (CMake)
+        run: |
+          cmake -S . -B build-cmake -DCMAKE_BUILD_TYPE=Release
+          cmake --build build-cmake
+          ./build-cmake/egsa87_test
