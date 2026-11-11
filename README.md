@@ -5,13 +5,28 @@
 
 Functions to convert geodetic coordinates from the [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System) 1984 (**WGS84**) to the [Hellenic Geodetic Reference System 1987](https://en.wikipedia.org/wiki/Hellenic_Geodetic_Reference_System_1987) (**HGRS87/EGSA87**) Greek geodetic system and vice versa.
 
-Implementations are provided in three languages:
+Implementations are provided in three languages: Python (installable package with CLI and GUI), C (C99 port), and Matlab (the original implementation).
 
-| Directory | Language | Notes |
-|-----------|----------|-------|
-| `src/egsa87/` | Python | Installable package with a command-line interface and a Tkinter GUI |
-| `C/` | C | C99 port of the Matlab routines, with a test program |
-| `Matlab/` | Matlab | Original implementation |
+## Project layout
+
+```
+.
+├── src/egsa87/          # Python package (see note below)
+│   ├── wgs84egsa87.py   #   WGS84 -> EGSA87 conversion function
+│   ├── egsa87wgs84.py   #   EGSA87 -> WGS84 conversion function
+│   ├── cli.py           #   egsa87 command-line tool
+│   ├── gui.py           #   egsa87-gui Tkinter desktop GUI
+│   └── __init__.py      #   public API: from egsa87 import ...
+├── tests/               # Python test suite (pytest)
+├── C/                   # C99 port of the Matlab routines + test program
+├── Matlab/              # original Matlab implementation
+├── pyproject.toml       # Python packaging metadata (pip install .)
+├── Makefile             # C build: make build / test-c / clean
+├── CMakeLists.txt       # alternative CMake build for the C port
+└── .github/workflows/   # CI: runs the Python tests and builds the C port
+```
+
+A note on the `src/` directory: it follows the modern Python *src layout* convention. `src/` itself contains no code — the package is `src/egsa87/`, and after `pip install .` you simply `import egsa87`. The indirection keeps the importable package from being picked up accidentally from the working directory, so tests always exercise the installed code. All other directories are named after the language they contain.
 
 This repository is the maintained continuation of the original [mlourakis/egsa87](https://github.com/mlourakis/egsa87) project; the Python port was contributed in [upstream PR #1](https://github.com/mlourakis/egsa87/pull/1).
 
