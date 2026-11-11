@@ -7,7 +7,9 @@ build-cmake/
 dist/
 .eggs/
 .venv/
+.venv*/
 venv/
+venv*/
 .pytest_cache/
 .coverage
 htmlcov/
